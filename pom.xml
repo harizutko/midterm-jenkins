@@ -1,43 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>midterm</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <properties>
-    <java.version>21</java.version>
-    <spring.boot.version>3.3.4</spring.boot.version>
-  </properties>
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>${spring.boot.version}</version>
-    </dependency>
-  </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>${spring.boot.version}</version>
-        <executions><execution><goals><goal>repackage</goal></goals></execution></executions>
-      </plugin>
-    </plugins>
-  </build>
-</project>
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>hw5-private-app</artifactId>
+    <artifactId>midterm-jenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hw5-private-app</name>
-    <description>Spring Boot hello world for HW6</description>
 
     <properties>
         <java.version>21</java.version>
@@ -49,14 +18,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring.boot.version}</version>
-        </dependency>
-
-        <!-- Optional but nice to have for tests -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring.boot.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -77,7 +38,7 @@
         </plugins>
     </build>
 
-    <!-- This is what Jenkins/Maven uses for mvn deploy -->
+    <!-- Tell Maven where to deploy, same as your working hw6-private-app -->
     <distributionManagement>
         <repository>
             <id>nexus</id>
@@ -85,8 +46,8 @@
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <url>http://localhost:8081/repository/maven-snapshots</url>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
 </project>
+
